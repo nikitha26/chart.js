@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chartjs</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
+</head>
+<body>
+    <div style="height: 500px; width: 700px;">
+        <h2>My First Chart.js</h2>
+        <canvas id="myChart"></canvas>
+        <canvas id="myChart1"></canvas>
+    </div>
+
+    <script>
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var chart = new Chart(ctx, {
+       // The type of chart we want to create
+       type: 'doughnut',
+
+      // The data for our dataset
+        data: {
+        labels: ['HTML'],
+        datasets: [{
+            label: 'My First dataset',
+            backgroundColor: ['rgb(255, 99, 132)'],
+            borderColor: 'rgb(0,0,0,0.1)',
+            borderWidth: 2,
+            data: [15, 10]
+        }]
+    },
+
+    // Configuration options go here
+    options: {
+        events: ['mousemove'],
+        animation: {
+            duration: 3000,
+        }
+    }
+});
+
+var ctx = document.getElementById('myChart1').getContext('2d');
+        var chart = new Chart(ctx, {
+       // The type of chart we want to create
+       type: 'pie',
+
+      // The data for our dataset
+        data: {
+        labels: ['HTML'],
+        datasets: [{
+            label: 'My First dataset',
+            backgroundColor: ['rgb(25, 99, 32)'],
+            borderColor: 'rgb(0,0,0,0.1)',
+            borderWidth: 2,
+            data: [15, 10]
+        }]
+    },
+
+    // Configuration options go here
+    options: {
+        events: ['mousemove'],
+        animation: {
+            duration: 3000,
+        }
+    }
+});
+    </script>
+</body>
+</html>
